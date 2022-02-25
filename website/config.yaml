@@ -1,0 +1,31 @@
+baseURL: "http://coffmanfam.com/"
+languageCode: "en-us"
+title: "Coffman Fam"
+theme: "PaperMod"
+
+timeout: 20000
+
+params:
+  author: admin
+  author_name: Josh C
+  nav_items: 1
+  index_items: 6
+  iso8601: "2006-01-02T15:04:05"
+
+summaryLength: 40
+
+staticDir: "static/build"
+
+buildFuture: true
+
+enableRobotsTXT: false
+
+rssLimit: 10000
+
+menu:
+  main:
+  - identifier: about
+    name: about
+    pre: <i class='fa fa-heart'></i>
+    url: /about/
+    weight: -110
