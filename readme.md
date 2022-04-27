@@ -37,3 +37,8 @@ docker run -i -t -v $PWD:/src vijaymateti/hugo:latest sh
 
 # build files
 `docker run --rm -it -v $PWD:/src -p 1313:1313 -u hugo vijaymateti/hugo:latest hugo --minify`
+
+
+# publish
+coming soon
+`sh publish.sh`
