@@ -14,7 +14,6 @@ cd quickstart
 # add theme
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-echo theme = \"ananke\" >> config.toml
 
 # gen first post
 docker run --rm -it -v $PWD:/src -p 1313:1313 -u hugo vijaymateti/hugo:latest hugo new posts/my-first-post.md

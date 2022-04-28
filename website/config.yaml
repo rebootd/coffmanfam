@@ -1,16 +1,51 @@
 baseURL: "http://coffmanfam.com/"
 languageCode: "en-us"
 title: "Coffman Fam"
-theme: "PaperMod"
+theme: "cactus"
 
 timeout: 20000
 
+# Enter your tracking code to enable Google Analytics
+googleAnalytics: ""
+# Disable comments by leaving disqusShortname empty
+disqusShortname: ""
+
 params:
   author: admin
-  author_name: Josh C
+  author_name: jcoffman
   nav_items: 1
   index_items: 6
   iso8601: "2006-01-02T15:04:05"
+  name: "jcoffman"
+  description: ""
+  bio: ""
+  # Enter optionally your twitter account
+  # twitter: null
+  enableShare: false
+  enableRSS: false
+  customCSS: []
+  customJS : []
+
+  # The variables below are optionally too and can be used to
+  # translate or customize each string of the theme.
+  # tweet: null
+  # share: null
+  # 404 page
+  title404: "oooopsie"
+  subtitle404: ""
+
+  # Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
+  iconFont: "font-awesome"
+  # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+  socialIconStyle: "circle"
+
+
+# Add additional social link entries underneath
+social:
+  # twitter: null
+  # facebook: ""
+  github : "https://www.github.com/rebootd"
+  # dribble: ""
 
 summaryLength: 40
 
@@ -27,8 +62,8 @@ menu:
   - identifier: about
     name: about
     url: /about/
-    weight: -110
+    weight: -100
   - identifier: posts
     name: posts
     url: /posts/
-    weight: -110
+    weight: -90
