@@ -1,3 +1,5 @@
 .env
 public/
+website/public/
+website/dev/
 **/*.old

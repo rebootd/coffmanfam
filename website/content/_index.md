@@ -1,1 +1,3 @@
-test home page
+
+[Jim Coffman](/misc/jim-coffman)
+

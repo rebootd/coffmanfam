@@ -15,7 +15,7 @@ No ceremony or viewing will be held, but friends and family are invited to visit
   
 Please check back on this page for any changes since the weather is uncertain.
 
-Contact Josh Coffman for more information. [josh@coffmanfam.com](mailto:josh@coffmanfam.com)
+Contact Josh for more information.
 
 **Details:**  
 
