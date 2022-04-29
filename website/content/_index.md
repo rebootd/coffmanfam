@@ -1,3 +1,3 @@
 
-[Jim Coffman](/misc/jim-coffman)
+[Jim Coffman](/misc/jim-coffman/)
 
