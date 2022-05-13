@@ -1,1 +1,1 @@
-this is an about page
+This site operated by Josh. Contact me for more information. 
