@@ -1,8 +1,8 @@
-+++
-date = "2021-04-20T14:02:37+02:00"
-title = "James R Coffman"
-+++
-
+---
+date: "2021-04-20T14:02:37+02:00"
+title: "James R Coffman"
+draft: false
+---
 
 James R. Coffman
 ================

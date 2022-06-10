@@ -29,10 +29,15 @@ docker run --rm -it -v $PWD:/src -p 1313:1313 -u hugo vijaymateti/hugo:latest hu
 
 
 # shell into image
-
 ```
 docker run -i -t -v $PWD:/src vijaymateti/hugo:latest sh
 ```
+
+# run hose
+```
+docker run --rm -it -v $PWD/website:/src -p 1313:1313 -u hugo vijaymateti/hugo:latest hugo server -wD -d dev --bind=0.0.0.0
+```
+
 
 # build files
 `docker run --rm -it -v $PWD:/src -p 1313:1313 -u hugo vijaymateti/hugo:latest hugo --minify`
