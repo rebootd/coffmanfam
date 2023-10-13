@@ -2,4 +2,6 @@
 public/
 website/public/
 website/dev/
+website/themes/
 **/*.old
+**/*_gen

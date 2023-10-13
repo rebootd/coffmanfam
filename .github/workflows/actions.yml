@@ -1,0 +1,24 @@
+name: Coffmanfam CI/CD
+run-name: ${{ github.actor }} pushed changes 🚀
+on:
+  push:
+    branches:
+      - master
+      - 'releases/**'
+jobs:
+  Site-Deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+      - name: Setup knownhosts
+        run: |
+          mkdir -p ~/.ssh/ && touch ~/.ssh/known_hosts
+          # ssh-keyscan ${{ secrets.HOSTING_IP }} >> ~/.ssh/known_hosts
+          eval $(ssh-agent)
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+
+
