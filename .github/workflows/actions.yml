@@ -32,7 +32,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            -s ./website
             
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
