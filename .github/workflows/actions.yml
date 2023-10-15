@@ -45,7 +45,7 @@ jobs:
       - name: deploy to host
         run: |
           ls ./website/public
-          sshpass -p '${{ secrets.HOSTING_PWD }}' rsync --exclude '.git' --exclude '.github' -r ./website/public/ ${{ secrets.HOSTING_USER }}@${{ secrets.HOSTING_IP }}:${{ secrets.HOSTING_PATH_TEST }}
+          sshpass -p '${{ secrets.HOSTING_PWD }}' rsync --exclude '.git' --exclude '.github' -r ./website/public/ ${{ secrets.HOSTING_USER }}@${{ secrets.HOSTING_IP }}:${{ secrets.HOSTING_PATH }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
 
