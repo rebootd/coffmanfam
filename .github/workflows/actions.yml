@@ -41,6 +41,10 @@ jobs:
           mkdir -p ~/.ssh/ && touch ~/.ssh/known_hosts
           # ssh-keyscan ${{ secrets.HOSTING_IP }} >> ~/.ssh/known_hosts
           eval $(ssh-agent)
+      - name: deploy to host
+        run: |
+          ls
+          # sshpass -p '${{ secrets.HOSTING_PWD }}' rsync --exclude '.git' --exclude '.github' -r ./ ${{ secrets.HOSTING_USER }}@${{ secrets.HOSTING_IP }}:${{ secrets.HOSTING_PATH_TEST }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
 
