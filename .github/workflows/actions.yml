@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: 'false'
+      - name: Checkout theme
         run: |
           rm -rf website/themes/cactus
           git clone --depth=1 https://github.com/monkeyWzr/hugo-theme-cactus.git website/themes/cactus
