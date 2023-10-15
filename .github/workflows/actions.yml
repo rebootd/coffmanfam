@@ -4,21 +4,48 @@ on:
   push:
     branches:
       - master
+      - 'release'
       - 'releases/**'
 jobs:
   Site-Deployment:
     runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.115.4
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+            #- name: Checkout theme
+            #run: |
+            #rm -rf website/themes/cactus
+            #git clone --depth=1 https://github.com/monkeyWzr/hugo-theme-cactus.git website/themes/cactus
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          ls
+          hugo --gc --minify -s ./website
+            
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
       - name: Setup knownhosts
         run: |
           mkdir -p ~/.ssh/ && touch ~/.ssh/known_hosts
-          # ssh-keyscan ${{ secrets.HOSTING_IP }} >> ~/.ssh/known_hosts
+          ssh-keyscan ${{ secrets.HOSTING_IP }} >> ~/.ssh/known_hosts
           eval $(ssh-agent)
+      - name: deploy to host
+        run: |
+          ls ./website/public
+          sshpass -p '${{ secrets.HOSTING_PWD }}' rsync --exclude '.git' --exclude '.github' -r ./website/public/ ${{ secrets.HOSTING_USER }}@${{ secrets.HOSTING_IP }}:${{ secrets.HOSTING_PATH }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
 
