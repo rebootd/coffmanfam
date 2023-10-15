@@ -40,6 +40,7 @@ jobs:
           eval $(ssh-agent)
       - name: deploy to host
         run: |
+          ls ./website/public
           sshpass -p '${{ secrets.HOSTING_PWD }}' rsync --exclude '.git' --exclude '.github' -r ./website/public/ ${{ secrets.HOSTING_USER }}@${{ secrets.HOSTING_IP }}:${{ secrets.HOSTING_PATH_TEST }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
