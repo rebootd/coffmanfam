@@ -15,8 +15,10 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
         with:
-          submodules: 'true'
-          fetch-depth: '10'
+          submodules: 'false'
+        run: |
+          rm -rf website/themes/cactus
+          git clone --depth=1 https://github.com/monkeyWzr/hugo-theme-cactus.git website/themes/cactus
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: Install Hugo CLI
         run: |
