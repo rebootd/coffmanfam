@@ -2,6 +2,8 @@
 # possible images
 - vijaymateti/hugo:latest
 - klakegg/hugo:0.92.1
+- docker run -i -p 1313:1313 -v ./website:/home/app -ti --network=host betterweb/hugo:latest
+  - currently using this one
 
 # getting started
 
